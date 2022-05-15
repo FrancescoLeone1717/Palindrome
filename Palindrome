@@ -1,0 +1,24 @@
+using System;
+
+class Program {
+    static void Main(string[] args) {
+        int numero, resto, somma = 0, temp;
+        Console.WriteLine("\n >>>> Verifica se un numero è palindromo <<<< ");
+        Console.Write("\n Inserisci un numero: ");
+        numero = Convert.ToInt32(Console.ReadLine());
+        temp = numero;
+        //invertire le cifre del numero 
+        while (numero > 0) {
+            resto = numero % 10; //resto    
+            numero = numero / 10; //quoziente   
+            somma = somma * 10 + resto;
+        }
+        Console.WriteLine("\n Il numero con le cifre invertite è: {0} \n", somma);
+        if (temp == somma) //Check    
+        {
+            Console.WriteLine("\n Il numero è palindromo \n\n");
+        } else {
+            Console.WriteLine("\n Il numero non è palindromo \n\n");
+        }
+    }
+}
